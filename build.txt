@@ -1,0 +1,11 @@
+author = jopojelly
+version = 0.1
+displayName = Emoji Support
+homepage = https://forums.terraria.org/index.php?threads/emoji-support.53893/
+buildIgnore = .git\*, ignore\*, .gitignore, .gitattributes, *.MD, *.csproj, *.user, obj\*, bin\*, 
+includePDB = true
+hideCode = false
+hideResources = false
+includeSource = true
+languageVersion = 6
+

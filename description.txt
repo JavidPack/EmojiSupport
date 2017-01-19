@@ -1,0 +1,1 @@
+﻿Adds Emoji support to ingame chat. use by typing "[e:poop]" in chat. 
