@@ -5,6 +5,7 @@ using System.Text;
 using Terraria.UI.Chat;
 using Newtonsoft.Json.Linq;
 using Terraria;
+using ReLogic.Graphics;
 
 namespace EmojiSupport
 {
@@ -42,7 +43,7 @@ namespace EmojiSupport
 				return true;
 			}
 
-			public override float GetStringLength(SpriteFont font)
+			public override float GetStringLength(DynamicSpriteFont font)
 			{
 				return resolution * EmojiTagHandler.GlyphsScale;
 			}

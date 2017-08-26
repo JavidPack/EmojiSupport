@@ -43,14 +43,21 @@ namespace EmojiSupport
 				emojiSupportUserInterface.SetState(emojiSupportUI);
 			}
 		}
+
+		public override void Unload()
+		{
+			instance = null;
+			emojiSupportUserInterface = null;
+		}
+
 		int lastSeenScreenWidth;
 		int lastSeenScreenHeight;
-		public override void ModifyInterfaceLayers(List<MethodSequenceListItem> layers)
+		public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)
 		{
 			int inventoryLayerIndex = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Mouse Text"));
 			if (inventoryLayerIndex != -1)
 			{
-				layers.Insert(inventoryLayerIndex, new MethodSequenceListItem(
+				layers.Insert(inventoryLayerIndex, new LegacyGameInterfaceLayer(
 					"EmojiSupport: Keyboard",
 					delegate
 					{
@@ -78,7 +85,7 @@ namespace EmojiSupport
 						}
 						return true;
 					},
-					null)
+					InterfaceScaleType.UI)
 				);
 			}
 
@@ -120,7 +127,7 @@ namespace EmojiSupport
 			Main.spriteBatch.Draw(toggleEmojiKeyboardTexture, toggleEmojiKeyboardButtonRectangle.TopLeft(), Color.White /** 0.7f*/);
 			if (toggleEmojiKeyboardButtonHover)
 			{
-				Main.toolTip = new Item();
+				Main.HoverItem = new Item();
 				Main.hoverItemName = "Click to toggle Emoji keyboard";
 			}
 		}

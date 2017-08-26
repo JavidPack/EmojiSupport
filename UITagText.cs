@@ -6,6 +6,7 @@ using Terraria.UI;
 using Terraria.GameContent.UI.Elements;
 using Terraria;
 using Terraria.UI.Chat;
+using ReLogic.Graphics;
 
 namespace EmojiSupport
 {
@@ -77,7 +78,7 @@ namespace EmojiSupport
 
 		private void InternalSetText(object text, float textScale, bool large)
 		{
-			SpriteFont spriteFont = large ? Main.fontDeathText : Main.fontMouseText;
+			DynamicSpriteFont spriteFont = large ? Main.fontDeathText : Main.fontMouseText;
 			//Vector2 textSize = new Vector2(spriteFont.MeasureString(text.ToString()).X, large ? 32f : 16f) * textScale;
 			this._text = text;
 			this._textScale = textScale;
@@ -94,7 +95,7 @@ namespace EmojiSupport
 			Vector2 pos = GetInnerDimensions().Position();
 
 			int hoverSnippetIndex = -1;
-			TextSnippet[] array = ChatManager.ParseMessage(Text, Color.White);
+			TextSnippet[] array = ChatManager.ParseMessage(Text, Color.White).ToArray();
 			ChatManager.DrawColorCodedStringWithShadow(Main.spriteBatch, Main.fontMouseText, array, pos, 0f, Vector2.Zero, Vector2.One, out hoverSnippetIndex, -1f, 2f);
 			if (hoverSnippetIndex > -1)
 			{

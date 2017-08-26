@@ -5,7 +5,7 @@ using Terraria.UI;
 using Terraria;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
-
+using ReLogic.Graphics;
 
 namespace EmojiSupport
 {
@@ -186,7 +186,7 @@ namespace EmojiSupport
 
 			CalculatedStyle innerDimensions = base.GetInnerDimensions();
 			Vector2 pos = innerDimensions.Position();
-			SpriteFont spriteFont = base.IsLarge ? Main.fontDeathText : Main.fontMouseText;
+			DynamicSpriteFont spriteFont = base.IsLarge ? Main.fontDeathText : Main.fontMouseText;
 			Vector2 vector = new Vector2(spriteFont.MeasureString(base.Text.Substring(0, this._cursor)).X, base.IsLarge ? 32f : 16f) * base.TextScale;
 			if (base.IsLarge)
 			{
