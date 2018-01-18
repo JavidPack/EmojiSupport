@@ -11,6 +11,8 @@ using Terraria.UI.Chat;
 
 namespace EmojiSupport
 {
+	// TODO: Emoji from Terraria Community Forums?
+	// TODO: Custom Emoji from file. Syncing, etc.
 	public class EmojiSupport : Mod
 	{
 		internal static EmojiSupport instance;
