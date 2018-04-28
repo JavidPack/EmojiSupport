@@ -43,8 +43,8 @@ namespace EmojiSupport
 				emojiSupportUI.Activate();
 				emojiSupportUserInterface = new UserInterface();
 				emojiSupportUserInterface.SetState(emojiSupportUI);
+				PremultiplyTexture(GetTexture("sheet_google_20"));
 			}
-			PremultiplyTexture(GetTexture("sheet_google_20"));
 		}
 
 		public override void Unload()
